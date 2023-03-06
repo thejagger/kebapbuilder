@@ -1,0 +1,17 @@
+{% extends 'kebapbuilder/base.html' %} 
+
+{% block title %}Neue Bestellung{% endblock %}
+
+{% block content %}
+<form method="post">{% csrf_token %}
+    {{ form.as_div }}
+
+    {{ form.non_field_errors }}
+    <!-- Name input -->
+    <div class="form-outline mb-4">
+        {{ form.person.errors }}
+        <label class="visually-hidden" for="inlineFormSelectPref">Name</label>
+        {{ form.person }}
+    </div>
+</form>
+{% endblock content %}

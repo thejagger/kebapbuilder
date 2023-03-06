@@ -1,0 +1,31 @@
+{% extends 'kebapbuilder/base.html' %} 
+
+{% block title %}Bestellungen{% endblock %}
+
+{% block content %}
+<a type="button" class="btn btn-primary btn-rounded mb-2" href="{% url 'kebapbuilder:add' %}"> Person hinzufügen </a>
+<table class="table align-middle mb-0 bg-white">
+    <thead class="bg-light">
+        <tr>
+            <th>Name</th>
+            <th>Typ</th>
+            <th>Sorte</th>
+            <th>Extrawünsche</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in order_list %}
+        <tr>
+            <td>{{order.person.firstname}} {{order.person.lastname}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
